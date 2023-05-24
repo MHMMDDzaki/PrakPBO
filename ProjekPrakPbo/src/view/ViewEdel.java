@@ -4,7 +4,6 @@
  */
 package view;
 
-import controller.ControllerEdel;
 import java.awt.*;
 import javax.swing.*;
 import model.ModelEdel;
@@ -19,15 +18,16 @@ public class ViewEdel extends JFrame {
     JLabel nameLabel = new JLabel("NIKE FUTSAL BOOKING");
     JLabel nameLabel2 = new JLabel("Edit & Delete Page");
     JLabel namaLabel = new JLabel("NAMA  :");
+    String pilihLapangan[] = {"Nike-1", "Nike-2", "Nike-3", "Nike-4"};
+    JComboBox list_lapangan = new JComboBox(pilihLapangan);
     JLabel lapanganLabel = new JLabel("LAPANGAN :");
     JLabel bookingLabel = new JLabel("LAMA BOOKING[JAM]  :");
-    JComboBox list_jadwal = new JComboBox(listData.ambilPilihan());
-    // bookingList = new JButton("Pilih Data");
-    public JTextField namaInput  = new JTextField();
-    public JTextField lapanganInput  = new JTextField();
-    public JTextField bookingInput  = new JTextField();
-    public JButton edit  = new JButton("EDIT");
-    public JButton delete  = new JButton("DELETE");
+    private JComboBox list_jadwal = new JComboBox(listData.ambilPilihan());
+    private JTextField namaInput  = new JTextField();
+    private JTextField bookingInput  = new JTextField();
+    public JButton edit  = new JButton("EDIT DATA");
+    public JButton delete  = new JButton("DELETE DATA");
+    public JButton homeEdel = new JButton("HOME");
 
     public ViewEdel() {
         // Mengatur judul frame
@@ -49,10 +49,12 @@ public class ViewEdel extends JFrame {
         bookingLabel.setBounds(300, 280, 230, 55);
         bookingLabel.setFont(new Font("Showcard Gothic", 1, 16));
         namaInput.setBounds(540, 170, 200, 30);
-        lapanganInput.setBounds(540, 230, 200, 30);
+        list_lapangan.setBounds(540, 230, 200, 30);
         bookingInput.setBounds(540, 290, 200, 30);
         edit.setBounds(380, 370, 100, 25);
         delete.setBounds(550, 370, 100, 25);
+        homeEdel.setBounds(870, 400, 75, 30);
+
 
         // Menambahkan komponen-komponen ke frame
         add(nameLabel);
@@ -61,21 +63,19 @@ public class ViewEdel extends JFrame {
         add(lapanganLabel);
         add(bookingLabel);
         add(namaInput);
-        add(lapanganInput);
+        add(list_lapangan);
         add(bookingInput);
         add(edit);
         add(delete);
         add(list_jadwal);
+        add(homeEdel);
 
-        // edit.addActionListener(this);
-        // delete.addActionListener(this);
         // Menutup aplikasi ketika jendela ditutup
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // Mengatur ukuran frame
-//        setExtendedState(JFrame.MAXIMIZED_BOTH); 
-//        setUndecorated(true);
         setSize(1000, 500);
+
         // Menampilkan frame
         setVisible(true);
     }
@@ -90,7 +90,8 @@ public class ViewEdel extends JFrame {
     }
     
     public String getEditLapangan(){
-        return lapanganInput.getText();
+        String lapanganInput = (String) list_lapangan.getSelectedItem();
+        return lapanganInput;
     }
     
     public String getEditBooking(){

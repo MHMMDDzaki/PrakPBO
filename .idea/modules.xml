@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/KalkulatorBalok/KalkulatorBalok.iml" filepath="$PROJECT_DIR$/KalkulatorBalok/KalkulatorBalok.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PrakPBO.iml" filepath="$PROJECT_DIR$/.idea/PrakPBO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjekPrakPbo/ProjekPrakPbo.iml" filepath="$PROJECT_DIR$/ProjekPrakPbo/ProjekPrakPbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QuizSatu/QuizSatu.iml" filepath="$PROJECT_DIR$/QuizSatu/QuizSatu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TugasBalokTabung/TugasBalokTabung.iml" filepath="$PROJECT_DIR$/TugasBalokTabung/TugasBalokTabung.iml" />
+    </modules>
+  </component>
+</project>

@@ -8,7 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import javax.swing.*;
+
+import model.ModelBooking;
 import model.ModelEdel;
+import view.ViewBooking;
 import view.ViewEdel;
 
 /**
@@ -24,16 +27,32 @@ public class ControllerEdel extends JFrame {
         this.viewEdel = viewEdel;
         this.modelEdel = modelEdel;
         
-        viewEdel.edit.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String idEdit = viewEdel.getID();
-                String namaEdit = viewEdel.getEditNama();
-                String lapanganEdit = viewEdel.getEditLapangan();
-                String bookingEdit = viewEdel.getEditBooking();
-                System.out.println(idEdit);
-                modelEdel.updateJadwal(namaEdit, bookingEdit, lapanganEdit, Integer.parseInt(idEdit));
-            }
+        viewEdel.edit.addActionListener(e -> {
+            String idEdit = viewEdel.getID();
+            String namaEdit = viewEdel.getEditNama();
+            String lapanganEdit = viewEdel.getEditLapangan();
+            String bookingEdit = viewEdel.getEditBooking();
+            modelEdel.updateJadwal(namaEdit, bookingEdit, lapanganEdit, Integer.parseInt(idEdit));
+            viewEdel.dispose();
+            ViewBooking viewBooking = new ViewBooking();
+            ModelBooking modelBooking = new ModelBooking();
+            ControllerBooking controllerBooking = new ControllerBooking(viewBooking, modelBooking);
+        });
+
+        viewEdel.delete.addActionListener(e -> {
+            String idEdit = viewEdel.getID();
+            modelEdel.deleteJadwal(Integer.parseInt(idEdit));
+            viewEdel.dispose();
+            ViewBooking viewBooking = new ViewBooking();
+            ModelBooking modelBooking = new ModelBooking();
+            ControllerBooking controllerBooking = new ControllerBooking(viewBooking, modelBooking);
+        });
+
+        viewEdel.homeEdel.addActionListener(e -> {
+            viewEdel.dispose();
+            ViewBooking viewBooking = new ViewBooking();
+            ModelBooking modelBooking = new ModelBooking();
+            ControllerBooking controllerBooking = new ControllerBooking(viewBooking, modelBooking);
         });
     }
     

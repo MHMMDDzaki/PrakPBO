@@ -5,21 +5,25 @@
 package view;
 
 import java.awt.Font;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 /**
  *
  * @author dzaki
  */
 public class ViewAdd extends JFrame{
-    private JTextField namaInput;
-    private JTextField durasiInput;
-    private JTextField bookingInput;
-    private JButton hasil;
-    private JButton hapus;
+    JLabel nameLabel = new JLabel("NIKE FUTSAL BOOKING");
+    JLabel nameLabel2 = new JLabel("Burn Your Spirit Up !!");
+    JLabel namaLabel = new JLabel("NAMA  :");
+    JLabel durasiLabel = new JLabel("LAMA BOOKING[JAM] :");
+    JLabel bookingLabel = new JLabel("LAPANGAN  :");
+    public JTextField namaInput = new JTextField();
+    public JTextField durasiInput = new JTextField();
+    String inputLapangan[] = {"Nike-1", "Nike-2", "Nike-3", "Nike-4"};
+    JComboBox listLapangan = new JComboBox(inputLapangan);
+    public JButton hasil = new JButton("INPUT");
+    public JButton hapus = new JButton("HAPUS");
+    public JButton homeAdd = new JButton("HOME");
 
     public ViewAdd() {
         // Mengatur judul frame
@@ -27,19 +31,6 @@ public class ViewAdd extends JFrame{
         
         // Mengatur layout menjadi null
         setLayout(null);
-
-        // Membuat komponen-komponen
-        JLabel nameLabel = new JLabel("NIKE FUTSAL BOOKING");
-        JLabel nameLabel2 = new JLabel("Burn Your Spirit Up !!");
-        JLabel namaLabel = new JLabel("NAMA  :");
-        JLabel durasiLabel = new JLabel("LAMA BOOKING[JAM] :");
-        JLabel bookingLabel = new JLabel("LAPANGAN  :");
-        namaInput = new JTextField();
-        durasiInput = new JTextField();
-        bookingInput = new JTextField();
-        hasil = new JButton("INPUT");
-        hapus = new JButton("HAPUS");
-        
 
         // Menentukan posisi dan ukuran komponen-komponen
         nameLabel.setBounds(370, 20, 500, 55);
@@ -54,11 +45,10 @@ public class ViewAdd extends JFrame{
         bookingLabel.setFont(new Font("Showcard Gothic", 1, 16));
         namaInput.setBounds(540, 130, 200, 30);
         durasiInput.setBounds(540, 190, 200, 30);
-        bookingInput.setBounds(540, 250, 200, 30);
+        listLapangan.setBounds(540, 250, 200, 30);
         hasil.setBounds(380, 350, 100, 25);
         hapus.setBounds(550, 350, 100, 25);
-        
-        
+        homeAdd.setBounds(870, 400, 75, 30);
 
         // Menambahkan komponen-komponen ke frame
         add(nameLabel);
@@ -68,38 +58,30 @@ public class ViewAdd extends JFrame{
         add(bookingLabel);
         add(namaInput);
         add(durasiInput);
-        add(bookingInput);
+        add(listLapangan);
         add(hasil);
         add(hapus);
-//        add(nameTextField);
-//        add(timeLabel);
-//        add(timeComboBox);
-//        add(reserveButton);
-
-        // Mengatur action listener untuk tombol reservasi
-//        reserveButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                String name = nameTextField.getText();
-//                String time = (String) timeComboBox.getSelectedItem();
-//
-//                // Melakukan tindakan reservasi (misalnya menampilkan pesan konfirmasi)
-//                String message = "Reservasi berhasil!\n\n" +
-//                        "Nama: " + name + "\n" +
-//                        "Waktu: " + time;
-//
-//                JOptionPane.showMessageDialog(FutsalReservationUI.this, message, "Reservasi Berhasil", JOptionPane.INFORMATION_MESSAGE);
-//            }
-//        });
+        add(homeAdd);
 
         // Menutup aplikasi ketika jendela ditutup
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // Mengatur ukuran frame
-//        setExtendedState(JFrame.MAXIMIZED_BOTH); 
-//        setUndecorated(true);
         setSize(1000,500);
+
         // Menampilkan frame
         setVisible(true);
+    }
+    public String getNamaInput() {
+        return namaInput.getText();
+    }
+
+    public String getDurasiInput() {
+        return durasiInput.getText();
+    }
+
+    public String getListLapangan() {
+        String inputLapangan = (String) listLapangan.getSelectedItem();
+        return inputLapangan;
     }
 }

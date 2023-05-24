@@ -14,59 +14,29 @@ import javax.swing.table.JTableHeader;
  * @author dzaki
  */
 public class ViewBooking extends JFrame {
-    private JTable table;
-    private DefaultTableModel tableModel;
-    private JButton edit;
-    private JButton delete;
-
+    public JTable table;
+    public DefaultTableModel tableModel;
+    JLabel nameLabel = new JLabel("NIKE FUTSAL SPORT");
+    public JButton addMenu = new JButton("ADD");;
+    public JButton editDelete = new JButton("EDIT & DELETE");;
+    // Membuat kolom-kolom tabel
+    public Object[] judul = {"ID", "Nama", "Durasi","No. Lapangan","Tanggal Booking"};
     public ViewBooking() {
         setTitle("Tabel Modern");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1000, 500);
         setLayout(null);
 
-        // Membuat kolom-kolom tabel
-        String[] columns = {"ID", "Nama", "Durasi","No. Lapangan","Tanggal Booking"};
-        
-        // Data baris untuk tabel
-        Object[][] data = {
-            {"John Doe", "25", "Jl. Sudirman No. 123"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            {"Jane Smith", "30", "Jl. Gatot Subroto No. 456"},
-            
-        };
-        
-        JLabel nameLabel = new JLabel("NIKE FUTSAL SPORT");
-        edit = new JButton("ADD");
-        delete = new JButton("EDIT & DELETE");
-
         // Membuat model tabel dengan kolom-kolom dan data yang telah ditentukan
-        DefaultTableModel tableModel = new DefaultTableModel(data, columns);
+        DefaultTableModel tableModel = new DefaultTableModel(judul,0);
 
         // Membuat objek JTable dengan model tabel
         table = new JTable(tableModel);
         table.setBounds(200, 80, 600, 280);
-        
         nameLabel.setBounds(370, 20, 500, 55);
         nameLabel.setFont(new Font("Showcard Gothic", 3, 24));
-        edit.setBounds(320, 380, 150, 25);
-        delete.setBounds(530, 380, 150, 25);
+        addMenu.setBounds(320, 380, 150, 25);
+        editDelete.setBounds(530, 380, 150, 25);
 
         // Mengatur warna latar belakang dan warna teks pada sel-sel tabel
         table.setBackground(Color.WHITE);
@@ -84,8 +54,8 @@ public class ViewBooking extends JFrame {
         // Menambahkan JScrollPane ke frame
         add(nameLabel);
         add(scrollPane);
-        add(edit);
-        add(delete);
+        add(addMenu);
+        add(editDelete);
 
         setVisible(true);
     }

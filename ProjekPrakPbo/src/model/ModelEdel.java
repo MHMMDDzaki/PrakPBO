@@ -5,6 +5,7 @@
 package model;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,9 +14,6 @@ import javax.swing.JOptionPane;
  */
 public class ModelEdel extends Connector {
     String pilihan[] = new String[20];
-    public ModelEdel() {
-    
-    }
     public String[] ambilPilihan(){
         int jmlData = 0;
         try{
@@ -28,7 +26,8 @@ public class ModelEdel extends Connector {
 
             // Mendapatkan data dari ResultSet dan menambahkannya ke JComboBox
             while (resultSet.next()) {
-                pilihan[jmlData] = resultSet.getString("id");  
+                pilihan[jmlData] = resultSet.getString("id");
+                jmlData++;
             }
             return pilihan;
         }catch(Exception e){
@@ -43,11 +42,9 @@ public class ModelEdel extends Connector {
             String querry = "UPDATE `data` SET nama='"+ name +"', durasi='"+ durasi +"', nomor_lapangan='"+ nomor_lapangan +"'" + "WHERE id='" + id + "'";
             statement = conn.createStatement();
             statement.executeUpdate(querry);
-            
-            System.out.println("Berhasil diupdate");
             JOptionPane.showMessageDialog(null, "Data Berhasil diupdate!");
         }catch(Exception e){
-            System.out.println("Error");
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
     
@@ -56,8 +53,8 @@ public class ModelEdel extends Connector {
             String querry = "DELETE FROM `data` WHERE id='" + id + "'";
             statement = conn.createStatement();
             statement.executeUpdate(querry);
-        }catch(Exception e){
-            System.out.println("Error");
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
 }

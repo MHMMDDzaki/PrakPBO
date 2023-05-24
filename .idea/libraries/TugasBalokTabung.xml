@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TugasBalokTabung">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TugasBalokTabung/dist/TugasBalokTabung.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

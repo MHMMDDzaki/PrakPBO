@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="KalkulatorBalok">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/KalkulatorBalok/dist/KalkulatorBalok.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

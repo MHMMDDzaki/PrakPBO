@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="QuizSatu">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/QuizSatu/dist/QuizSatu.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
