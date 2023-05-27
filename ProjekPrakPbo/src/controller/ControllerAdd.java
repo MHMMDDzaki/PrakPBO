@@ -18,7 +18,8 @@ public class ControllerAdd extends JFrame {
             String inputNama = viewAdd.getNamaInput();
             String inputDurasi = viewAdd.getDurasiInput();
             String inputLapangan = viewAdd.getListLapangan();
-            modelAdd.inputJadwal(inputNama, inputDurasi, inputLapangan);
+            String inputBooking = viewAdd.getJamBooking();
+            modelAdd.inputJadwal(inputNama, inputDurasi, inputLapangan, inputBooking);
             viewAdd.dispose();
             ViewBooking viewBooking = new ViewBooking();
             ModelBooking modelBooking = new ModelBooking();
@@ -26,8 +27,9 @@ public class ControllerAdd extends JFrame {
         });
 
         viewAdd.hapus.addActionListener(e -> {
-            viewAdd.namaInput.setText("");
-            viewAdd.durasiInput.setText("");
+            viewAdd.setNamaInput();
+            viewAdd.setDurasiInput();
+            viewAdd.setJamBookingInput();
         });
 
         viewAdd.homeAdd.addActionListener(e -> {

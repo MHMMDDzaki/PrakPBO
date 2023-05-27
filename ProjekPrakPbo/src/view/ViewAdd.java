@@ -16,9 +16,11 @@ public class ViewAdd extends JFrame{
     JLabel nameLabel2 = new JLabel("Burn Your Spirit Up !!");
     JLabel namaLabel = new JLabel("NAMA  :");
     JLabel durasiLabel = new JLabel("LAMA BOOKING[JAM] :");
+    JLabel jamBookingLabel = new JLabel("JAM BOOKING :");
     JLabel bookingLabel = new JLabel("LAPANGAN  :");
-    public JTextField namaInput = new JTextField();
-    public JTextField durasiInput = new JTextField();
+    private JTextField namaInput = new JTextField();
+    private JTextField durasiInput = new JTextField();
+    private JTextField jamBookingInput = new JTextField();
     String inputLapangan[] = {"Nike-1", "Nike-2", "Nike-3", "Nike-4"};
     JComboBox listLapangan = new JComboBox(inputLapangan);
     public JButton hasil = new JButton("INPUT");
@@ -43,11 +45,15 @@ public class ViewAdd extends JFrame{
         durasiLabel.setFont(new Font("Showcard Gothic", 1, 16));
         bookingLabel.setBounds(300, 240, 230, 55);
         bookingLabel.setFont(new Font("Showcard Gothic", 1, 16));
+        jamBookingLabel.setBounds(300, 300, 230, 55);
+        jamBookingLabel.setFont(new Font("Showcard Gothic", 1, 16));
         namaInput.setBounds(540, 130, 200, 30);
         durasiInput.setBounds(540, 190, 200, 30);
         listLapangan.setBounds(540, 250, 200, 30);
-        hasil.setBounds(380, 350, 100, 25);
-        hapus.setBounds(550, 350, 100, 25);
+        jamBookingInput.setBounds(540, 310, 200, 30);
+
+        hasil.setBounds(380, 380, 100, 25);
+        hapus.setBounds(550, 380, 100, 25);
         homeAdd.setBounds(870, 400, 75, 30);
 
         // Menambahkan komponen-komponen ke frame
@@ -56,9 +62,11 @@ public class ViewAdd extends JFrame{
         add(namaLabel);
         add(durasiLabel);
         add(bookingLabel);
+        add(jamBookingLabel);
         add(namaInput);
         add(durasiInput);
         add(listLapangan);
+        add(jamBookingInput);
         add(hasil);
         add(hapus);
         add(homeAdd);
@@ -83,5 +91,19 @@ public class ViewAdd extends JFrame{
     public String getListLapangan() {
         String inputLapangan = (String) listLapangan.getSelectedItem();
         return inputLapangan;
+    }
+
+    public String getJamBooking() { return jamBookingInput.getText(); }
+
+    public void setNamaInput() {
+        namaInput.setText("");
+    }
+
+    public void setDurasiInput() {
+        durasiInput.setText("");
+    }
+
+    public void setJamBookingInput() {
+        jamBookingInput.setText("");
     }
 }

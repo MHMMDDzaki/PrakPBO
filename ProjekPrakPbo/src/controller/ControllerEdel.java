@@ -28,11 +28,12 @@ public class ControllerEdel extends JFrame {
         this.modelEdel = modelEdel;
         
         viewEdel.edit.addActionListener(e -> {
-            String idEdit = viewEdel.getID();
+            String idEdit = String.valueOf(viewEdel.getID().charAt(0));
             String namaEdit = viewEdel.getEditNama();
             String lapanganEdit = viewEdel.getEditLapangan();
             String bookingEdit = viewEdel.getEditBooking();
-            modelEdel.updateJadwal(namaEdit, bookingEdit, lapanganEdit, Integer.parseInt(idEdit));
+            String jamBookingEdit = viewEdel.getEditJamBooking();
+            modelEdel.updateJadwal(namaEdit, bookingEdit, lapanganEdit, jamBookingEdit, Integer.parseInt(idEdit));
             viewEdel.dispose();
             ViewBooking viewBooking = new ViewBooking();
             ModelBooking modelBooking = new ModelBooking();
@@ -40,7 +41,7 @@ public class ControllerEdel extends JFrame {
         });
 
         viewEdel.delete.addActionListener(e -> {
-            String idEdit = viewEdel.getID();
+            String idEdit = String.valueOf(viewEdel.getID().charAt(0));
             modelEdel.deleteJadwal(Integer.parseInt(idEdit));
             viewEdel.dispose();
             ViewBooking viewBooking = new ViewBooking();

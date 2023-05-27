@@ -20,7 +20,7 @@ public class ViewBooking extends JFrame {
     public JButton addMenu = new JButton("ADD");;
     public JButton editDelete = new JButton("EDIT & DELETE");;
     // Membuat kolom-kolom tabel
-    public Object[] judul = {"ID", "Nama", "Durasi","No. Lapangan","Tanggal Booking"};
+    public Object[] judul = {"ID", "Nama", "Durasi","No. Lapangan","Jam Booking","Tanggal Booking"};
     public ViewBooking() {
         setTitle("Tabel Modern");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

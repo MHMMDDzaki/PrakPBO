@@ -22,9 +22,11 @@ public class ViewEdel extends JFrame {
     JComboBox list_lapangan = new JComboBox(pilihLapangan);
     JLabel lapanganLabel = new JLabel("LAPANGAN :");
     JLabel bookingLabel = new JLabel("LAMA BOOKING[JAM]  :");
+    JLabel jamBookingLabel = new JLabel("JAM BOOKING  :");
     private JComboBox list_jadwal = new JComboBox(listData.ambilPilihan());
     private JTextField namaInput  = new JTextField();
     private JTextField bookingInput  = new JTextField();
+    private JTextField jamBookingInput  = new JTextField();
     public JButton edit  = new JButton("EDIT DATA");
     public JButton delete  = new JButton("DELETE DATA");
     public JButton homeEdel = new JButton("HOME");
@@ -48,11 +50,14 @@ public class ViewEdel extends JFrame {
         lapanganLabel.setFont(new Font("Showcard Gothic", 1, 16));
         bookingLabel.setBounds(300, 280, 230, 55);
         bookingLabel.setFont(new Font("Showcard Gothic", 1, 16));
+        jamBookingLabel.setBounds(300, 340, 230, 55);
+        jamBookingLabel.setFont(new Font("Showcard Gothic", 1, 16));
         namaInput.setBounds(540, 170, 200, 30);
         list_lapangan.setBounds(540, 230, 200, 30);
         bookingInput.setBounds(540, 290, 200, 30);
-        edit.setBounds(380, 370, 100, 25);
-        delete.setBounds(550, 370, 100, 25);
+        jamBookingInput.setBounds(540, 350, 200, 30);
+        edit.setBounds(380, 400, 100, 25);
+        delete.setBounds(550, 400, 120, 25);
         homeEdel.setBounds(870, 400, 75, 30);
 
 
@@ -62,9 +67,11 @@ public class ViewEdel extends JFrame {
         add(namaLabel);
         add(lapanganLabel);
         add(bookingLabel);
+        add(jamBookingLabel);
         add(namaInput);
         add(list_lapangan);
         add(bookingInput);
+        add(jamBookingInput);
         add(edit);
         add(delete);
         add(list_jadwal);
@@ -96,6 +103,9 @@ public class ViewEdel extends JFrame {
     
     public String getEditBooking(){
         return bookingInput.getText();
+    }
+    public String getEditJamBooking(){
+        return jamBookingInput.getText();
     }
 
 }

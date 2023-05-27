@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 24, 2023 at 06:45 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: May 27, 2023 at 06:36 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,15 +32,9 @@ CREATE TABLE `data` (
   `nama` varchar(255) NOT NULL,
   `durasi` varchar(255) NOT NULL,
   `nomor_lapangan` varchar(255) NOT NULL,
+  `jam_booking` varchar(255) NOT NULL,
   `tanggal_booking` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `data`
---
-
-INSERT INTO `data` (`id`, `nama`, `durasi`, `nomor_lapangan`, `tanggal_booking`) VALUES
-(2, 'Apdi', '100 Jam', 'A5', '2023-05-15 14:33:17');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +54,7 @@ ALTER TABLE `data`
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
