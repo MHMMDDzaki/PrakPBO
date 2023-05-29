@@ -6,12 +6,21 @@ import java.io.RandomAccessFile;
 
 public class Main {
     public static void main(String[] args) {
+        Connector connector = new Connector();
         try {
             ExecutorService executorService = Executors.newFixedThreadPool(50);
-            RandomAccessFile file = new RandomAccessFile("testing3.txt", "rw");
+            RandomAccessFile file = new RandomAccessFile("data.txt", "rw");
 
-            // Process 1000 data using multiple threads
-            for (int i = 1; i <= 1000; i++) {
+            // Process 1000 data and write to file using multiple threads
+//            for (int i = 1; i <= 1000; i++) {
+//                Random random = new Random();
+//                int randomNumber = random.nextInt(12) + 1;
+//                Runnable worker = new Multithread(randomNumber, file);
+//                executorService.execute(worker);
+//            }
+
+            // Process an upload data to mysql also write file using multiple threads
+            for (int i = 1; i <= 50; i++) {
                 Random random = new Random();
                 int randomNumber = random.nextInt(12) + 1;
                 Runnable worker = new Multithread(randomNumber, file);
